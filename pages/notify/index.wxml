@@ -1,0 +1,34 @@
+<!--pages/notify/index.wxml-->
+<view class='container'>
+  <view class='spaceline'></view>
+  <scroll-view 
+    class='notify-scroll' 
+    enable-back-to-top=true
+    scroll-y style="height: {{height}}" 
+  >
+    <block 
+      wx:for="{{list}}" 
+      wx:key="id" wx:for-item="notify"
+    >
+       <view class='notify'>
+        <view class='notify-icon'>
+          <image class='img-normal' src="{{notify.icon}}"></image>
+        </view>
+        <view class='notify-item'>
+          <view class='flex-row'>
+            <text class='notify-from'>{{notify.from}}</text>
+            <text class='notify-date'>{{notify.dateTime}}</text>
+          </view>
+          <view class='notify-title'>
+            <text>{{notify.title}}</text>
+          </view>
+          <view>
+            <text class='notify-content'>{{notify.content}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='spaceline'></view>
+    </block>
+  </scroll-view>
+</view>
+

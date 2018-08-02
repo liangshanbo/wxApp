@@ -1,0 +1,37 @@
+<!--pages/mine/index.wxml-->
+<import src="/components/list/index.wxml"/>
+<view class='container'>
+  <view class='flex-row mine-header'>
+    <view bind:tap="avatarClick" class='top-center avatar-warp'>
+      <image  class='mine-avatar' src='{{avatarUrl}}' />
+    </view>
+    <view class='flex-row userinfo-warp'>
+      <view class='flex-column mine-userinfo'>
+        <text>{{nickName}}</text>
+        <text>{{gender}}</text>
+      </view>
+      <image 
+        bind:tap="callme" 
+        class='img-phone' src="/images/icons/callme.png" />
+    </view>
+  </view>
+  <view class='spaceline'></view>
+  <view class='temp-warp' bind:tap="itemTap">
+    <template is="temp-list" data="{{list}}"/>
+  </view>
+  <block wx:if="{{systemInfo.length > 0}}">
+    <view class='system-title'>
+      <text>客户端及微信信息：</text>
+    </view>
+    <view 
+      class='system-info'
+      wx:for="{{systemInfo}}"
+      wx:for-index="idx" 
+      wx:for-item="item" 
+      wx:key="idx" 
+    >
+      <text wx:if="{item.key}}">{{item.key}}：</text>
+      <text wx:if="{item.value}}">{{item.value}}</text>
+    </view>
+  </block>
+</view>

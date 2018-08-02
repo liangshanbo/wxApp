@@ -1,0 +1,55 @@
+<!--pages/tools/train/cities/index.wxml-->
+<view class='container'>
+  <view class="flex-row city-inputs">
+    <input
+      focus
+      type='text'
+      maxlength='10'
+      class='city-input'
+      placeholder='出发站'
+      value="{{fm.value}}"
+      bindfocus="onFmFocus"
+    ></input>
+    <input
+      type='text'
+      maxlength='10'
+      class='city-input'
+      placeholder='到达站'
+      value="{{to.value}}"
+      bindfocus="onToFocus"
+    ></input>
+    <button
+      size='default'
+      type='default'
+      class='city-btn'
+      catchtap='submit'
+    >确定</button>
+  </view>
+  <view>
+    <view wx:if="{{favoriteList}}" class='favorite-text'>
+      <text>热门城市</text>
+    </view>
+    <view class='favorite-cities'>
+      <view 
+        class='flex-row favorite-warp'
+        wx:for="{{favoriteList}}"
+        wx:for-item="favorite"
+        wx:for-index="idx"
+        wx:key="idx"
+      >
+        <view
+          class='city-name'
+          wx:for="{{favorite}}" 
+          wx:for-item="city" 
+          wx:key="city.key"
+          data-key="{{city.key}}"
+          data-name="{{city.value}}"
+          bindtap='onCityChange'
+        >
+          <text>{{city.value}}</text>
+        </view>
+        
+      </view>
+    </view>
+  </view>
+</view>

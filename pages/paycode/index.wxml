@@ -1,0 +1,9 @@
+<!--pages/paycode/index.wxml-->
+<view class='container'>
+  <view 
+    class="pay-view" 
+    >
+      <image class='pay-qrcode' src='/images/home/qrcode.png' />
+  </view>
+</view>
+

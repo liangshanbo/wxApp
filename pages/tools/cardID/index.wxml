@@ -1,0 +1,41 @@
+<!--pages/tools/cardID/index.wxml-->
+<view class='container'>
+  <view class="mobile-form">
+      <input 
+        type="idcard" 
+        bindinput="onInput"
+        class="mobile-input"
+        confirm-type="search"
+        placeholder-class="mobile-placeholder"
+        placeholder="请输入身份证号" focus="true" maxlength="18" />
+        <button class='btn' type="primary" bindtap="onConfirm" >
+          查询
+        </button>
+  </view>
+  <view wx:if="{{result}}" class='mobile-body'>
+    <view class='mobile-line'>
+      <text class='label'>省份：</text>
+      <text class='content'>{{result.prov}}</text>
+    </view>
+    <view class='mobile-line'>
+      <text class='label'>城市：</text>
+      <text class='content'>{{result.city}}</text>
+    </view>
+    <view class='mobile-line'>
+      <text class='label'>区县：</text>
+      <text class='content'>{{result.region}}</text>
+    </view>
+    <view class='mobile-line'>
+      <text class='label'>性别：</text>
+      <text class='content'>{{result.sex}} </text>
+    </view>
+    <view class='mobile-line'>
+      <text class='label'>年龄：</text>
+      <text class='content'>{{result.age}} 周岁</text>
+    </view>
+    <view class='mobile-line'>
+      <text class='label'>出生：</text>
+      <text class='content'>{{result.birthday}} </text>
+    </view>
+  </view>
+</view>

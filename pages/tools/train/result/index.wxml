@@ -1,0 +1,52 @@
+<!--pages/tools/train/result/index.wxml-->
+<view class='wrap'>
+  <view 
+    class='line'
+    wx:if="list"
+    wx:for="{{list}}"
+    wx:for-item="train"
+    wx:key="train.no"
+  >
+    <view class='item'>
+      <view class='flex-column fm'>
+        <text class='startTime'>{{train.startTime}}</text>
+        <text class='startPoint'>{{train.from}}</text>
+      </view>
+      <view class='flex-column duration'>
+        <text class='durationTime'>{{train.duration}}</text>
+        <image src="/images/tools/line.png" class='durationLine'></image>
+        <text class='durationNo'>{{train.no}}</text>
+      </view>
+      <view class='flex-column to'>
+        <text class='arriveTime'>{{train.arriveTime}}</text>
+        <text class='arrivePoint'>{{train.arrive}}</text>
+      </view>
+    </view>
+    <view class='flex-row site-warp'>
+      <view wx:if="{{train.secondClass}}" class='site'>
+        <text>二等座：{{train.secondClass}}</text>
+      </view>
+      <view wx:if="{{train.hardSeat}}" class='site'>
+        <text>硬座：{{train.hardSeat}}</text>
+      </view>
+      <view wx:if="{{train.hardBerth}}" class='site'>
+        <text>硬卧：{{train.hardBerth}}</text>
+      </view>
+      <view wx:if="{{train.softBerth}}" class='site'>
+        <text>软卧：{{train.softBerth}}</text>
+      </view>
+      <view wx:if="{{train.motorBerth}}" class='site'>
+        <text>动卧：{{train.motorBerth}}</text>
+      </view>
+      <view wx:if="{{train.firstClass}}" class='site'>
+        <text>一等座：{{train.firstClass}}</text>
+      </view>
+      <view wx:if="{{train.business}}" class='site'>
+        <text>商务座：{{train.business}}</text>
+      </view>
+      <view wx:if="{{train.noneSeat}}" class='site'>
+        <text>无座：{{train.noneSeat}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,117 @@
+<!--pages/tools/weather/index.wxml-->
+<view class='container' wx:if="{{weather}}">
+  <picker 
+    mode="region" bindchange="bindRegionChange" value="{{region}}" >
+    <view class='header'>
+      <view  class='flex-row'>
+        <image class='location' src='/images/weather/location.png'></image>
+          <text class='city'>{{region[1]}}</text>
+          <text class='city'>·{{region[2]}}</text>
+      </view>
+      <view class='flex-column tody'>
+        <text class='weather_temp'>{{weather.temp}}℃</text>
+        <view class='flex-row weather_tody'>
+          <image 
+            class='weather_img' 
+            src="/images/weather/{{weather.img}}.png">
+          </image>
+          <text class='weather_text'>{{weather.weather}}</text>
+          <text 
+            class='weather_text'>{{weather.templow}} ~ {{weather.temphigh}}℃</text>
+        </view>
+        <view class='flex-row pm'>
+          <text
+            class='pm_text'
+          >{{weather.aqi.quality}} {{weather.aqi.aqi}}
+          </text>
+          <text
+            class='pm_text'
+          >{{weather.winddirect}} {{weather.windpower}}
+          </text>
+        </view>
+      </view>
+    </view>
+  </picker>
+  <view class='body'>
+      <scroll-view 
+        scroll-x
+        class='flex-row preweather_warp'
+      >
+        <view 
+          class='preweather_item'
+          wx:for="{{weather.daily}}"
+          wx:for-item="daily"
+          wx:key="daily.date"
+        >
+          <text class='label'>{{daily.date}}日({{daily.week}})</text>
+          <image 
+            class='label preweather_img' 
+            src='/images/weather/{{daily.day.img}}.png'></image>
+            <image 
+            class='label preweather_img' 
+            src='/images/weather/{{daily.night.img}}.png'></image>
+          <text class='label'>{{daily.day.weather}}</text>
+          <text class='label'>{{daily.night.templow}} ~ {{daily.day.temphigh}} ℃</text>
+          <text class='label'>{{daily.day.winddirect}}</text>
+          <text class='label'>{{daily.day.windpower}}</text>
+        </view>
+      </scroll-view>
+      <view class='spaceline'></view>
+      <view class='flex-column index_warp'>
+        <view class='flex-row index'>
+          <view class='flex-row index_item'>
+            <image 
+              class='index_img' src='/images/weather/clothes.png'></image>
+            <view class='flex-column ivalue_warp'>
+              <text class='ivalue'>{{weather.index[6].ivalue}}</text>
+              <text class='iname'>{{weather.index[6].iname}}</text>
+            </view>
+          </view>
+          <view class='flex-row index_item'>
+            <image 
+              class='index_img' src='/images/weather/air.png'></image>
+            <view class='flex-column ivalue_warp'>
+              <text class='ivalue'>{{weather.index[0].ivalue}}</text>
+              <text class='iname'>{{weather.index[0].iname}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='flex-row index'>
+          <view class='flex-row index_item'>
+            <image 
+              class='index_img' src='/images/weather/sport.png'></image>
+            <view class='flex-column ivalue_warp'>
+              <text class='ivalue'>{{weather.index[1].ivalue}}</text>
+              <text class='iname'>{{weather.index[1].iname}}</text>
+            </view>
+          </view>
+          <view class='flex-row index_item'>
+            <image 
+              class='index_img' src='/images/weather/sun.png'></image>
+            <view class='flex-column ivalue_warp'>
+              <text class='ivalue'>{{weather.index[2].ivalue}}</text>
+              <text class='iname'>{{weather.index[2].iname}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='flex-row index'>
+          <view class='flex-row index_item'>
+            <image 
+              class='index_img' src='/images/weather/medicine.png'></image>
+            <view class='flex-column ivalue_warp'>
+              <text class='ivalue'>{{weather.index[3].ivalue}}</text>
+              <text class='iname'>{{weather.index[3].iname}}</text>
+            </view>
+          </view>
+          <view class='flex-row index_item'>
+            <image 
+              class='index_img' src='/images/weather/car.png'></image>
+            <view class='flex-column ivalue_warp'>
+              <text class='ivalue'>{{weather.index[4].ivalue}}</text>
+              <text class='iname'>{{weather.index[4].iname}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+</view>

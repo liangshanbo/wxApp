@@ -1,0 +1,97 @@
+/* pages/movie/detail/index.wxss */
+.header {
+  padding: 20rpx 30rpx;
+  background-color: #1B82D2;
+  justify-content: space-between;
+}
+.header .content {
+  display: flex;
+  color: #F5F5F5;
+  font-size: 24rpx;
+  min-width: 400rpx;
+  flex-direction: column;
+}
+.header .content .title {
+  color: #FFF;
+  font-size: 36rpx;
+}
+.label {
+  padding-top: 16rpx;
+}
+.poster {
+  width: 180rpx;
+  height: 250rpx;
+}
+.body {
+  padding: 30rpx;
+}
+.score {
+  align-items: center;
+  justify-content: space-between;
+}
+.average {
+  color: #323232;
+  font-size: 40rpx;
+}
+.star {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 16rpx;
+}
+.stars {
+  align-items: center;
+}
+.numRaters {
+  font-size: 40rpx;
+}
+.normal-text {
+  font-size: 24rpx;
+}
+.btns {
+  padding: 20rpx 0;
+  align-items: center;
+  margin-left: -40rpx;
+  justify-content: space-around;
+}
+.btns button {
+  width: 150%;
+  display: flex;
+  height: 80rpx;
+  font-size: 30rpx;
+  margin-left: 40rpx;
+  align-items: center;
+  justify-content: center;
+}
+.btns button image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+.summary {
+  font-size: 26rpx;
+  line-height: 50rpx;
+}
+.casts .title {
+  font-size: 36rpx;
+}
+.scroll-view {
+  width: 100%;
+  display: flex;
+  margin-top: 20rpx;
+  white-space: nowrap;
+}
+.scroll-view image {
+  width: 180rpx;
+  height: 250rpx;
+}
+.cast-item {
+  width: 180rpx;
+  margin-right: 20rpx;
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+}
+.cast-name {
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}

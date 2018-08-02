@@ -1,0 +1,161 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+   <view class='headerline'>
+   <view class='header-qrcode-wrap' bind:tap="scanCode">
+      <image class='header-qrcode' src='/images/home/sao.png'></image>
+    </view>
+    <view class='search-wapp'>
+      <input 
+        class='search-input' 
+        confirm-type="search"
+        bindconfirm="comfirm"
+        placeholder="电影名称或演员名称"
+        placeholder-class="search-placeholder" 
+      />
+      <image class='search-icon' src="/images/home/search.png" />
+    </view>
+    <view 
+      wx:if="{{weather}}" 
+      class='flex-column weather-wrap' bind:tap="gotoWeather"
+    >
+      <view class='flex-row temp'>
+        <text class='temp-text'>{{weather.temp}}℃</text>
+        <image 
+          class='weather-icon' 
+          src="/images/weather/{{weather.img}}.png"
+        >
+        </image>
+      </view>
+      <view class='flex-row weather'>
+        <text class='weather-text'>{{weather.weather}}</text>
+        |
+        <text class='weather-text'>{{weather.aqi.quality}}</text>
+      </view>
+    </view>
+   </view>
+  </view>
+  <scroll-view
+      scroll-x="true"
+      wx:if="{{movies}}"
+      class='scroll-view'
+    >
+      <view 
+        class='cast-item'
+        wx:for="{{movies}}"
+        wx:for-item="movie"
+        wx:key="movie.id"
+        bindtap='gotoDetail'
+        data-id="{{movie.id}}"
+      >
+        <image src="{{movie.img}}"></image>
+        <text class='cast-name'>{{movie.title}}</text>
+      </view>
+  </scroll-view>
+  <view class='spaceline'></view>
+  <view class='serve-wrap'>
+    <view class='action' bindtap='gotoWeather'>
+      <image class='action-icon' src='/images/home/weather.png'></image>
+      <text class='action-text'>天气</text>
+    </view>
+    <view class='action' bindtap='gotoCardID'>
+      <image class='action-icon' src='/images/home/cardID.png'></image>
+      <text class='action-text'>身份证</text>
+    </view>
+    <view class='action' bindtap='gotoMobile'>
+      <image class='action-icon' src='/images/home/recharge.png'></image>
+      <text class='action-text'>手机查询</text>
+    </view>
+    <view class='action' bindtap='gotoWuliu'>
+      <image class='action-icon' src='/images/home/express.png'></image>
+      <text class='action-text'>快递</text>
+    </view>
+   </view>
+   <view class='serve-wrap'>
+    <view class='action' bindtap='gotoAnwser'>
+      <image class='action-icon' src='/images/home/robot.png'></image>
+      <text class='action-text'>智能问答</text>
+    </view>
+    <view class='action' bindtap='gotoTrain'>
+      <image class='action-icon' src='/images/home/train.png'></image>
+      <text class='action-text'>火车票</text>
+    </view>
+   </view>
+   <view class='spaceline'></view>
+   <view wx:if="{{scene_list}}" class='flex-row scene-list'>
+    <view 
+      class='scene-item'
+      wx:for="{{scene_list}}"
+      wx:for-item="scene"
+      wx:key="scene.sid"
+      bindtap='sceneDetail'
+      data-id="{{scene.sid}}"
+      data-surl="{{scene.surl}}"
+    >
+      <view class='img-warp'>
+        <image class='scene-img' src="{{scene.cover.full_url}}"></image>
+        <text class='scene-ticket'>{{ scene.ticket.price_old ? '¥' + scene.ticket.price_old : '免费'}}</text>
+        <text wx:if="{{scene.ext.level !== '--'}}" class='scene-level'>{{scene.ext.level}}</text>
+      </view>
+      <view class='flex-row scene-content'>
+        <text class='scene-title'>{{scene.ambiguity_sname}}</text>
+        <view class='scene'>
+          <text class='scene-score'>{{scene.ext.avg_remark_score}}</text>分
+          <!-- <text>{{scene.ext.visit_count}}人的浏览量</text> -->
+        </view>
+      </view>
+      <view class='scene-des scene-content'>
+        <text class='scene-des-text'>{{scene.ext.impression}}</text>
+      </view>
+    </view>
+   </view>
+   <!-- <map 
+    id="map"
+    class='map'
+    show-location=true
+    scale="{{map.scale}}"
+    controls="{{controls}}"
+    latitude="{{map.latitude}}"
+    longitude="{{map.longitude}}"
+    >
+      <cover-view class='flex-column map-controls'>
+      <cover-image 
+          class='map-btn'
+          bind:tap='locate'
+          src="/images/map/location_fill.png">
+        </cover-image>
+        <cover-image 
+          class='map-btn'
+          bind:tap='enlarge'
+          src="/images/map/plus.png">
+        </cover-image>
+        <cover-image 
+          class='map-btn' 
+          bind:tap='shrink'
+          src="/images/map/minus.png">
+        </cover-image>
+      </cover-view>
+    </map>   -->
+    <web-view 
+    src="{{url}}"
+    wx:if="{{url}}" 
+    bind:longpress="longpress" >
+      <cover-view class='flex-column map-controls'>
+      <cover-image 
+          class='map-btn'
+          bind:tap='locate'
+          src="/images/map/location_fill.png">
+        </cover-image>
+        <cover-image 
+          class='map-btn'
+          bind:tap='enlarge'
+          src="/images/map/plus.png">
+        </cover-image>
+        <cover-image 
+          class='map-btn' 
+          bind:tap='shrink'
+          src="/images/map/minus.png">
+        </cover-image>
+      </cover-view>
+    </web-view> 
+</view>

@@ -1,0 +1,26 @@
+<!--pages/tools/cars/brand/index.wxml-->
+<view class='container'>
+  <view wx:for="{{list}}" wx:for-item="brand" wx:key="brand.id">
+    <view class='flex-row car-key'>
+      <text class='car-key-text'>{{brand.name}}</text>
+    </view>
+    <view class='flex-column car-list'>
+      <view 
+        class='flex-row car-item'
+        wx:for="{{brand.carlist}}" 
+        wx:for-item="car" 
+        wx:key="car.id"
+        data-id="{{car.id}}"
+        data-detail="{{car}}"
+        bindtap='gotoCarDetail'
+      >
+        <image class='car-logo' src="{{car.logo}}"></image>
+        <view class='flex-column car-content'>
+          <text class='car-name'>{{car.fullname}}</text>
+          <text class='car-price'>{{car.price || '暂无报价'}}</text>
+          <text class='car-salestate'>{{car.salestate}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

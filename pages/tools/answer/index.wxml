@@ -1,0 +1,27 @@
+<!--pages/tools/answer/index.wxml-->
+<view class='container'>
+  <view class="mobile-form">
+      <input 
+        type="idcard" 
+        bindinput="onInput"
+        class="mobile-input"
+        confirm-type="search"
+        placeholder-class="mobile-placeholder"
+        placeholder="请输入问题" focus="true" maxlength="18" />
+        <button class='btn' type="primary" bindtap="onConfirm" >
+          提问
+        </button>
+  </view>
+  <view wx:if="{{result}}" class='mobile-body'>
+    <view class='warn-warp'>
+      <text class='label'>提示：</text>
+      <text class='content'>{{result.relquestion || '暂无提示'}}</text>
+    </view>
+     <view class='warn-warp'>
+      <text class='label'>答案：</text>
+    </view>
+     <view class='warn-warp'>
+      <text class='content' >{{result.content}}</text>
+    </view>
+  </view>
+</view>

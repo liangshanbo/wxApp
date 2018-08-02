@@ -1,0 +1,54 @@
+<!--pages/search/detail/index.wxml-->
+<view class='container'>
+  <view class="flex-row search-title" >
+      <text class='title'>{{title}}</text>
+      <text class='total'>约{{total}}个</text>
+  </view>
+  <view wx:if="{{movies.length}}">
+    <view 
+        wx:for="{{movies}}" 
+        class='flex-row movie-item'
+        wx:for-item="item" wx:key="item.id"
+        data-id="{{item.id}}"
+        bindtap='gotoDetail'
+      >
+      <view class='movie-img-wrap'>
+        <image  
+          class='movie-img' src="{{item.images.medium}}"></image>
+      </view>
+      <view class='movie-content'>
+        <view class='movie-title'>
+          <text>{{item.title}}</text>
+        </view>
+        <view class='flex-row movie-content-warp'>
+          <text class='movie-label'>观众评分</text>
+          <text class='movie-scole'>{{item.average || '暂无评分'}}</text>
+        </view>
+        <view class='flex-row movie-content-warp'>
+          <view class='movie-label'>
+            <text>导演：</text>
+          </view>
+          <text class='movie-content-long'> {{item.director}} </text>
+        </view>
+        <view class='flex-row movie-content-warp'>
+         <view class='movie-label'>
+            <text>主演：</text>
+          </view>
+          <view class='movie-content-casts'>
+            <text class='break'> {{item.cast}} </text>
+          </view>
+        </view>
+        <view class='flex-row movie-content-warp'>
+         <text class='movie-label'>电影类型：</text>
+          <text>{{item.genres}}</text>
+        </view>
+      </view>
+      <view>
+        <button>
+          
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
+

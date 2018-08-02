@@ -1,0 +1,30 @@
+<!--pages/tools/cars/detail/index.wxml-->
+<view class='container'>
+  <view class='header'>
+    <text class='price'>{{detail.price}}</text>
+    <image class='banner' src="{{detail.logo}}"></image>
+    <!-- <text class='img-count'>{{detail.list.length}}</text> -->
+  </view>
+  <view class='flex-column car-list'>
+    <view 
+      class='flex-row car-item'
+      wx:for="{{detail.list}}" 
+      wx:for-item="car" 
+      wx:key="car.id"
+      data-id="{{car.id}}"
+    >
+      <image 
+        class='car-logo' 
+        binderror="imgError"
+        src="{{car.logo ? (imgPath + car.logo) : detail.logo}}"
+        ></image>
+      <view class='flex-row car-content'>
+        <view class='flex-column car-text'>
+          <text class='car-name'>{{car.name}}</text>
+          <text class='car-sizetype'>{{car.sizetype}}</text>
+        </view>
+        <text class="low-price">{{car.price}}</text>
+      </view>
+    </view>
+  </view>
+</view>

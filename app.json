@@ -1,0 +1,71 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/tools/train/index",
+    "pages/tools/jingdian/index",
+    "pages/tools/mobile/index",
+    "pages/search/detail/index",
+    "pages/map/index",
+    "pages/movie/index",
+    "pages/mine/index",
+    "pages/notify/index",
+    "pages/paycode/index",
+    "pages/wifi/index",
+    "pages/movie/detail/index",
+    "pages/tools/wuliu/index",
+    "pages/tools/cardID/index",
+    "pages/tools/weather/index",
+    "pages/tools/cars/index",
+    "pages/tools/cars/brand/index",
+    "pages/tools/cars/detail/index",
+    "pages/tools/answer/index",
+    "pages/tools/train/result/index",
+    "pages/tools/train/cities/index"
+  ],
+  "window": {
+    "backgroundColor": "#F5F5F5",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#1B82D2"
+  },
+  "tabBar": {
+    "color": "#383838",
+    "selectedColor": "#29A0F7",
+    "backgroundColor": "#FFF",
+    "list": [
+      {
+        "iconPath": "images/tabs/home.png",
+        "selectedIconPath": "images/tabs/home_actived.png",
+        "pagePath": "pages/home/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "images/tabs/movie.png",
+        "selectedIconPath": "images/tabs/movie_actived.png",
+        "pagePath": "pages/movie/index",
+        "text": "电影"
+      },
+      {
+        "iconPath": "images/tabs/map.png",
+        "selectedIconPath": "images/tabs/map_actived.png",
+        "pagePath": "pages/map/index",
+        "text": "地图"
+      },
+      {
+        "iconPath": "images/tabs/car.png",
+        "selectedIconPath": "images/tabs/car_actived.png",
+        "pagePath": "pages/tools/cars/index",
+        "text": "汽车"
+      },
+      {
+        "iconPath": "images/tabs/mine.png",
+        "selectedIconPath": "images/tabs/mine_actived.png",
+        "pagePath": "pages/mine/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

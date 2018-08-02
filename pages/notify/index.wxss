@@ -1,0 +1,57 @@
+/* pages/notify/index.wxss */
+.header {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  padding: 20rpx;
+  position: fixed;
+  align-items: center;
+  flex-direction: row;
+  box-sizing: border-box;
+  background-color: #FFF;
+  justify-content: space-between;
+}
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+.header-title {
+  font-size: 28rpx;
+  padding-left: 20rpx;
+}
+.header-settings {
+  color: #2598EA;
+  font-size: 28rpx;
+}
+.notify {
+  display: flex;
+  padding: 20rpx;
+  flex-direction: row;
+}
+.notify-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.notify-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.notify-from,
+.notify-date,
+.notify-title,
+.notify-content {
+  color: #A6A6A6;
+  font-size: 24rpx;
+  padding: 0 12rpx;
+}
+.marginTop80 {
+  margin-top: 80rpx;
+}
+.notify-title {
+  color: #444444;
+  font-size: 30rpx;
+  padding-top: 20rpx;
+}

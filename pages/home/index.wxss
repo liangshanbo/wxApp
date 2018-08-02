@@ -1,0 +1,268 @@
+/* pages/home/index.wxss */
+.header {
+  padding: 20rpx 10rpx;
+  background-color: #1B82D2;
+}
+.headerline {
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+}
+.header-qrcode-wrap {
+  width: 80rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+}
+.header-qrcode {
+  width: 50rpx;
+  height: 50rpx;
+}
+.search-wapp{
+  width: 100%;
+  position: relative;
+}
+.search-input { 
+  color: #FFF;
+  height: 60rpx;
+  font-size: 24rpx;
+  position: relative;
+  padding-left: 50rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid #187AC5;
+  background-color: #1773B9;
+}
+.search-placeholder{
+  color: #999;
+  font-size: 24rpx;
+}
+.search-icon {
+  top: 14rpx;
+  left: 12prx;
+  width: 32rpx;
+  height: 32rpx;
+  padding-left: 10rpx;
+  position: absolute;
+}
+.weather-wrap {
+  width: 140rpx;
+  height: 60rpx;
+  color: #FFF;
+}
+.weather {
+  width: 140rpx;
+  font-size: 20rpx;
+  justify-content: center;
+}
+.temp {
+  width: 140rpx;
+  align-items: center;
+  justify-content: center;
+}
+.temp-text {
+  font-size: 26rpx;
+  padding: 0 10rpx;
+}
+.weather-icon {
+  width: 30rpx;
+  height: 30rpx;
+}
+.weather-text {
+  overflow: hidden;
+  padding: 0 5rpx;
+}
+.action-wrap,
+.serve-wrap {
+  display: flex;
+  padding: 30rpx;
+  padding-bottom: 0;
+  justify-content: space-between;
+}
+.action {
+  width: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.action-icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 20rpx;
+}
+.action-text {
+  color: #FFF;
+  font-size: 24rpx;
+}
+.serve-wrap {
+  padding: 30rpx 50rpx;
+}
+.serve-wrap .action-icon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: 12rpx;
+}
+.serve-wrap .action-text {
+  color: #4C4C4C;
+  font-size: 20rpx;
+}
+.notify {
+  display: flex;
+  height: 70rpx;
+  padding: 30rpx;
+  flex-direction: row;
+}
+.notify-left {
+  width: 80rpx;
+  height: 100%;
+  display: flex;
+  margin-right: 20rpx;
+  align-items: center;
+  justify-content: center;
+}
+.notify-right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.notify-icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+.notify-text {
+  color: #545454;
+  font-size: 24rpx;
+  margin-bottom: 10rpx;
+}
+.notify-more {
+  height: 100%;
+  width: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.notify-more .notify-icon {
+  width: 30rpx;
+  height: 30rpx;
+}
+.map {
+  width: 100%;
+  height: 600rpx;
+}
+.map-controls {
+  right: 0;
+  bottom: 0;
+  width: 60rpx;
+  height: 240rpx;
+  padding: 10rpx;
+  position: absolute;
+}
+.map-btn {
+  width: 40rpx;
+  height: 40rpx;
+  padding: 10rpx;
+  margin-top: 10rpx;
+  background-color: #FFF;
+}
+.player-warp {
+  width: 60rpx;
+  height: 56rpx;
+  display: flex;
+  overflow: hidden;
+  margin-left: 20rpx;
+  align-items: center;
+  border-radius: 30rpx;
+  background-color: #FFF;
+  justify-content: center;
+}
+.player {
+  width: 40rpx;
+  height: 40rpx;
+}
+.scroll-view {
+  width: 100%;
+  display: flex;
+  margin: 0 10rpx;
+  padding: 20rpx 0;
+  white-space: nowrap;
+}
+.cast-item {
+  width: 180rpx;
+  margin-right: 20rpx;
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+}
+.scroll-view image {
+  width: 180rpx;
+  height: 250rpx;
+}
+.cast-name {
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  max-width: 180rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.scene-list {
+  padding: 20rpx;
+  padding-right: 40rpx;
+  flex-wrap: wrap;
+}
+.scene-item {
+  width: 50%;
+  margin-bottom: 20rpx;
+}
+.scene-item:nth-child(2n+1) {
+  margin-right: 20rpx;
+}
+.scene-item:nth-child(2n) {
+  margin-right: -20rpx;
+}
+.img-warp {
+  position: relative;
+}
+.scene-img {
+  width: 345rpx;
+  height: 230rpx;
+}
+.scene-level,
+.scene-ticket {
+  right: 10rpx;
+  color: #F0970A;
+  font-size: 24rpx;
+  position: absolute;
+  border-radius: 8rpx;
+  padding: 2rpx 10rpx;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.scene-ticket {
+  top: 10rpx;
+}
+.scene-level {
+  bottom: 20rpx;
+}
+.scene-content {
+  font-size: 20rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.scene-title {
+  font-size: 26rpx;
+}
+.scene-score {
+  color: #F0970A;
+  font-size: 24rpx;
+}
+.scene-des {
+  margin-top: 10rpx;
+}
+.scene-des-text {
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

@@ -1,0 +1,47 @@
+/* pages/tools/train/cities/index.wxss */
+.city-inputs {
+  display: flex;
+  padding: 20rpx;
+  background-color: #1B82D2;
+  justify-content: space-around;
+}
+.city-input {
+  width: 260rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  border-radius: 8rpx;
+  padding-left: 10rpx;
+  margin-right: 30rpx;
+  display: inline-block;
+  background-color: #FFF;
+  border: 1rpx solid #999;
+}
+.input-placeholder {
+  color: #666;
+  font-size: 24rpx;
+}
+.city-btn {
+  width: 120rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  display: inline-block;
+}
+.favorite-text {
+  color: #777;
+  padding: 10rpx;
+  font-size: 24rpx;
+  background-color: #F3F3F3;
+}
+.favorite-warp {
+  padding: 20rpx;
+  font-size: 28rpx;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #EEE;
+}
+.city-name {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}

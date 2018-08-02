@@ -1,0 +1,33 @@
+<!--pages/tools/jingdian/index.wxml-->
+<view class='container'>
+  <view class="sence-banner">
+  <swiper 
+    autoplay="{{true}}"
+    interval="{{2000}}"
+    class="sence-slide"
+    indicator-dots="{{true}}"
+  >
+  <block wx:for="{{detail.list}}" wx:for-index="idx" wx:key="idx">
+    <swiper-item width="750" class="slide-item">
+      <image src="{{item}}" mode="aspectFill" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+  </view>
+  <view class='sence-body'>
+    <view class='sence-line'>
+      <text class='label'>景点类型</text>
+      <text class='cence-text'>{{detail.type || '暂无'}}</text>
+    </view>
+    <view class='sence-line'>
+      <text class='label'>最佳季节</text>
+      <text class='cence-text'>{{detail.season || '暂无'}}</text>
+    </view>
+    <view class='sence-line'>
+      <text class='label'>建议游玩</text>
+      <text class='cence-text'>{{detail.dcnt || '暂无'}}</text>
+    </view>
+  </view>
+</view>
+
+

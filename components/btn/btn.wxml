@@ -1,0 +1,13 @@
+<!--components/btn.wxml-->
+<template name="temp-list">
+  <view 
+    class='btn-warp' 
+    bindtap='onConfirm'
+    bindtouchstart='touchStart'
+    bindtouchend='touchEnd'
+  >
+    <view class='btn' type="primary" >
+      查询
+    </view>
+  </view>
+</template>

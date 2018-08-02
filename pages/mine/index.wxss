@@ -1,0 +1,42 @@
+/* pages/mine/index.wxss */
+@import "/components/list/index.wxss";
+.mine-header {
+  height: 120rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
+  background-color: #1B82D2;
+}
+.avatar-warp {
+  width: 120rpx;
+}
+.mine-avatar {
+  width: 100rpx;
+  height: 100rpx;
+}
+.mine-userinfo {
+  color: #FFF;
+  font-size: 24rpx;
+  padding-left: 20rpx;
+  padding-bottom: 20rpx;
+  justify-content: space-around;
+}
+.temp-warp {
+  padding-top: 20rpx;
+}
+.userinfo-warp {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.system-title {
+  padding: 30rpx;
+}
+.system-info {
+  padding: 30rpx;
+  font-size: 24rpx;
+}
+.img-phone {
+  width: 40rpx;
+  height: 40rpx;
+}

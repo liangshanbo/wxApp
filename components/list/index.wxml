@@ -1,0 +1,21 @@
+<template name="temp-list">
+  <view 
+  class='flex-row temp-list-item' 
+  wx:for="{{list}}" 
+  wx:for-index="idx" 
+  wx:for-item="item" 
+  bind:tap="tap"
+  wx:key="idx"
+  >
+    <image class='img-normal temp-list-icon' src="{{item.img}}"></image>
+    <view class='flex-row temp-list-box' data-item="{{item}}">
+      <text class='temp-list-title'>{{item.title}}</text>
+      <text wx:if="{{item.content}}" class='temp-list-content'>{{item.content}}</text>
+      <image 
+        class='img-normal'
+        data-item="{{item}}" 
+        src="/images/home/next-icon.png" 
+      />
+    </view>
+  </view>
+</template>

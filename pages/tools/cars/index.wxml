@@ -1,0 +1,24 @@
+<!--pages/tools/cars/index.wxml-->
+<view class='container'>
+  <view wx:for="{{keys}}" wx:for-item="key" wx:key="key">
+    <view class='flex-row car-key'>
+      <text class='car-key-text'>{{key}}</text>
+    </view>
+    <view class='flex-column car-list'>
+      <view 
+        class='flex-row car-item'
+        wx:for="{{list[key]}}" 
+        wx:for-item="car" 
+        wx:key="car.id"
+        data-id="{{car.id}}"
+        bindtap='gotoCarList'
+      >
+        <image class='car-logo' src="{{car.logo}}"></image>
+        <view class='car-content'>
+          <text>{{car.name}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

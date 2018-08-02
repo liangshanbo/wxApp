@@ -1,0 +1,30 @@
+<!--pages/wifi/index.wxml-->
+<!--index.wxml-->
+<view class="container">
+  <view 
+    class='wifi-warp' 
+    wx:for="{{wifiList}}" 
+    wx:for-index="idx" 
+    wx:for-item="wifi"
+    wx:key="idx"
+    data-wifi="{{wifi}}"
+    bindtap='connectWifi'  
+  >
+    <view class='ssid-wifi-warp'>
+      <image 
+          class='right-wifi'  
+          wx:if="{{wifi.connected}}" 
+          src="/images/icons/right.png" />
+      <view wx:if="{{!wifi.connected}}" class='right-wifi'></view>
+      <text class='wifi'>{{wifi.SSID}}</text>
+    </view>
+    <view class='img-wifi-warp'>
+      <image 
+        class='img-wifi' 
+        src="{{wifi.img}}" />
+      <image 
+        wx:if="{{wifi.secure}}" 
+        class='img-lock' src="/images/icons/lock.png" />
+    </view>
+  </view>
+</view>

@@ -1,0 +1,34 @@
+<!--pages/tools/train/index.wxml-->
+<view class='container'>
+  <view class="flex-row train-search">
+    <view class='flex-row train-from' bindtap='gotoCity'>
+      <text class='from-text'>{{fm.value}}</text>
+    </view> 
+    <view class='train-transfer' bindtap='onTransfer'>
+      <image 
+        class='train-image' 
+        src='/images/tools/double_arrow.png'
+      ></image>
+    </view>
+    <view class='flex-row train-to' bindtap='gotoCity'>
+      <text class='to-text'>{{to.value}}</text>
+    </view>   
+  </view>
+  <picker
+    mode="date"
+    fields="day"
+    class="date"
+    value="{{date}}"
+    start="{{tody}}"
+    bindchange="dateChange"
+  ><view>{{date}}</view></picker>
+  <view 
+    class='btn-warp' 
+    bindtap='onConfirm'
+  >
+    <view class='btn' type="primary" >
+      查询
+    </view>
+  </view>
+</view>
+

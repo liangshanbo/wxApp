@@ -1,0 +1,34 @@
+<!--pages/tools/mobile/index.wxml-->
+<view class='container'>
+  <view class="mobile-form">
+      <input 
+        type="number" 
+        bindinput="onInput"
+        class="mobile-input"
+        confirm-type="search"
+        placeholder-class="mobile-placeholder"
+        placeholder="请输入手机号" focus="true" maxlength="11" />
+        <button class='btn' type="primary" bindtap="onConfirm" >
+          查询
+        </button>
+  </view>
+  <view wx:if="{{result}}" class='mobile-body'>
+    <view class='mobile-line'>
+      <text class='label'>区号：</text>
+      <text class='content'>{{result.areacode}}</text>
+    </view>
+    <view class='mobile-line'>
+      <text class='label'>运营商：</text>
+      <text class='content'>{{result.company}}</text>
+    </view>
+    <view class='mobile-line'>
+      <text class='label'>城市：</text>
+      <text class='content'>{{result.province}} {{result.city || result.province}}</text>
+    </view>
+    <view class='mobile-line'>
+      <text class='label'>模式：</text>
+      <text class='content'>{{result.cardtype}} </text>
+    </view>
+  </view>
+</view>
+

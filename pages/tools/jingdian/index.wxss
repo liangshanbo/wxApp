@@ -1,0 +1,25 @@
+/* pages/tools/jingdian/index.wxss */
+.sence-slide {
+  width: 750rpx;
+  height: 420rpx;
+}
+.slide-image {
+  width: 750rpx;
+  height: 420rpx;
+}
+.sence-body {
+  padding: 20rpx;
+}
+.sence-line {
+  display: flex;
+  height: 80rpx;
+  align-items: center;
+}
+.label {
+  color: #666;
+  width: 160rpx;
+  font-size: 30rpx;
+}
+.cence-text {
+  font-size: 30rpx;
+}

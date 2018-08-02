@@ -1,0 +1,57 @@
+<!--pages/tools/wuliu/index.wxml-->
+<view class='container'>
+  <view class="mobile-form">
+      <input 
+        type="number" 
+        value="{{code}}"
+        bindinput="onInput"
+        class="mobile-input"
+        confirm-type="search"
+        placeholder-class="mobile-placeholder"
+        placeholder="请输入快递单号" focus="true" maxlength="13" />
+        <button class='btn' type="primary" bindtap="onConfirm" >
+          查询
+        </button>
+  </view>
+  <view wx:if="{{result}}" class='mobile-body'>
+    <view class='mobile-line'>
+      <text class='label'>快递单号：</text>
+      <text class='content'>{{result.number}}</text>
+    </view>
+    <view class='mobile-line'>
+      <text class='label'>快递公司：</text>
+      <text class='content'>{{result.expName}}</text>
+    </view>
+    <view class='mobile-line'>
+      <text class='label'>快递状态：</text>
+      <text class='content'>{{result.status}}</text>
+    </view>
+    <view class='mobile-line'>
+      <text class='label'>快递官网：</text>
+      <text class='content'>{{result.expSite}} </text>
+    </view>
+    <view class='mobile-line'>
+      <text class='label'>快递电话：</text>
+      <text class='content'>{{result.expPhone}} </text>
+    </view>
+  </view>
+  <view  wx:if="{{result}}">
+    <view
+      class='wuliu-list flex-column'
+      wx:for="{{result.list}}"
+      wx:for-index="idx"
+      wx:for-item="wuliu"
+      wx:key="wuliu.time"
+    >
+      <view class='flex-row wuliu-line'>
+        <view class='flex-column wuliu-time-wrap'>
+          <text class='wuliu-time'>{{wuliu.date}}</text>
+          <text class='wuliu-time'>{{wuliu.time}}</text>
+        </view>
+        <text class="{{ idx === 0 ? 'wuliu-status' : 'gray'}}">{{wuliu.status}}</text>
+      </view> 
+    </view>
+  </view>
+</view>
+
+

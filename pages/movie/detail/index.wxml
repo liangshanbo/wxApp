@@ -1,0 +1,65 @@
+<!--pages/movie/detail/index.wxml-->
+<view class='container'>
+  <view class='flex-row header'>
+    <view class='content'>
+      <text class='title'>{{detail.title}}</text>
+      <text class='label'>{{detail.language}}</text>
+      <text class='label'>{{detail.country[0]}} | {{detail.movie_duration[0]}}</text>
+      <text class='label'>{{detail.pubdate[0]}} 上映</text>
+    </view>
+    <image class='poster' src="{{detail.image}}"></image>
+  </view>
+  <view class='body'>
+    <view class='flex-row score'> 
+      <view class='flex-row'>
+        <text class='average'>{{detail.rating.average}}</text>
+        <view class='flex-row stars'>
+          <image 
+            wx:for="{{5}}" 
+            wx:for-item="index" 
+            wx:key="index"
+            class='star'
+            src="{{detail.rating.average > index * 2 ? '/images/icons/star_solid.png' : '/images/icons/star_space.png' }}"
+          ></image>
+        </view>
+      </view>
+      <view class='flex-column'>
+        <text class='numRaters'>{{detail.rating.numRaters}}</text>
+        <text class='normal-text'>点评人数</text>
+      </view>
+    </view>
+    <view  class='flex-row btns'>
+      <button><image src="/images/icons/star.png"></image>想看</button>
+      <button>看过</button>
+    </view>
+    <view class='flex-row'>
+     <text class='summary'>{{detail.summary}}</text>
+    </view>
+    <view class='casts'>
+      <text class='title'>演职人员</text>
+      <scroll-view
+        scroll-x="true"
+        class='scroll-view'
+      >
+        <view 
+          class='cast-item'
+          wx:for="{{directors}}"
+          wx:for-item="director"
+          wx:key="director.id"
+        >
+          <image src="{{director.avatars.medium}}"></image>
+          <text class='cast-name'>{{director.name}} (导演)</text>
+        </view>
+        <view 
+          class='cast-item'
+          wx:for="{{casts}}"
+          wx:for-item="cast"
+          wx:key="c.id"
+        >
+          <image src="{{cast.avatars.medium || detail.image}}"></image>
+          <text class='cast-name'>{{cast.name}}</text>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

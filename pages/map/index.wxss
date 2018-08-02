@@ -1,0 +1,45 @@
+/* pages/map/index.wxss */
+.map_container{
+  position: absolute;
+  top: 0;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+}
+.map{
+  width: 100%;
+  height: 100%;
+}
+.map_text{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  height: 80px;
+  background: #fff;
+  padding: 0 15px;
+}
+text{
+  margin: 5px 0;
+  display: block;
+  font-size:12px;
+}
+.h1{
+  margin: 15px 0;
+  font-size:15px;
+}
+.subway_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map_normal {
+  width: 1200rpx;
+  height: 900rpx;
+  transform: rotateZ(90deg);
+  transform-origin: 35% 52%;
+}
+.map_scale {
+  width: 200%;
+  transform: scale(2.0);
+}
